@@ -73,7 +73,7 @@ export default function PricingSection() {
         <div className="row justify-content-center gap-5">
 
           {/* STARTER */}
-          <div className="col-md-3  ">
+          <div className="col-md-3 w-50">
             <div className="pricing-card active3">
               <h4>Starter</h4>
               <h2>$0</h2>
@@ -98,7 +98,7 @@ export default function PricingSection() {
           </div>
 
           {/* PRO (Highlighted) */}
-          <div className="col-md-3  ">
+          <div className="col-md-3 w-50">
             <div className="pricing-card card-1 ">
               <h4>Pro</h4>
               <h2>$9/mo</h2>
