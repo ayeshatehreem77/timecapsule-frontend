@@ -15,6 +15,8 @@ export default function LoginModal() {
                 password,
             });
 
+            console.log("LOGIN RESPONSE:", res.data);
+
             const token = res.data?.accessToken;
             const user = res.data?.user;
 
@@ -23,24 +25,34 @@ export default function LoginModal() {
                 return;
             }
 
-            if (user.isBlocked) {
-                showAlert("Account blocked", "error");
+            if (user?.isBlocked) {
+                showAlert("Access Denied: Account Suspended", "error");
                 return;
             }
 
+            // ✅ SAVE AUTH DATA
             localStorage.setItem("token", token);
             localStorage.setItem("user", JSON.stringify(user));
+            localStorage.setItem("role", user?.role || "user");
 
-            // 🔥 IMPORTANT FIX
-            localStorage.setItem("userId", user.id);
+            // ⚠️ IMPORTANT FIX (MongoDB safe id)
+            localStorage.setItem("userId", user?._id || user?.id || "");
 
-            showAlert("Login successful", "success");
+            showAlert("Access Granted!", "success");
 
-            window.location.href =
-                user.role === "admin" ? "/admin" : "/dashboard";
+            // ✅ REDIRECT
+            if (user?.role === "admin") {
+                window.location.href = "/admin";
+            } else {
+                window.location.href = "/dashboard";
+            }
 
         } catch (err: any) {
-            showAlert(err.response?.data?.message || "Login failed", "error");
+            console.error("LOGIN ERROR:", err);
+            showAlert(
+                err.response?.data?.message || "Login failed",
+                "error"
+            );
         }
     };
 
