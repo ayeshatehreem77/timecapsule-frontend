@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "../styles/auth.css";
 import { useAlert } from '../context/useAlert';
-// import api from "../utils/api";
-import axios from "axios";
+import api from "../utils/api";
 
 export default function LoginModal() {
     const [email, setEmail] = useState("");
@@ -11,7 +10,7 @@ export default function LoginModal() {
 
     const handleLogin = async () => {
         try {
-            const res = await axios.post("https://time-capsule-16y0.onrender.com/auth/auth/login", {
+            const res = await api.post("/auth/login", {
                 email,
                 password,
             });
