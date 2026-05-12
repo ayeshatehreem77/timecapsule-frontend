@@ -87,7 +87,7 @@ export default function PricingSection() {
 
               <button
                 className="cta-btn me-3 text-decoration-none"
-                onClick={()=>handleDowngrade()}
+                onclick={()=>handleDowngrade()}
                 disabled={user?.plan === "starter"}
               >
                 {user?.plan === "starter"
