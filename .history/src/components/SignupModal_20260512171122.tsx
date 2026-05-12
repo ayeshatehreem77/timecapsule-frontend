@@ -35,7 +35,7 @@ export default function SignupModal() {
   // 🔐 VERIFY OTP
   const verifyOtp = async () => {
     try {
-      await axios.post("https://time-capsule-16y0.onrender.com/auth/verify-otp", {
+      await axios.post(`${import.meta.env.VITE_API_URL}/auth/verify-otp`, {
         email: form.email,
         otp,
       });
