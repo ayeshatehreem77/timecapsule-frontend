@@ -11,7 +11,7 @@ export default function LoginModal() {
 
     const handleLogin = async () => {
         try {
-            const res = await axios.post("https://time-capsule-16y0.onrender.com/auth/auth/login", {
+            const res = await axios.post("https://time-capsule-16y0.onrender.com/auth/login", {
                 email,
                 password,
             });
