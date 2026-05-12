@@ -3,7 +3,7 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 export default function SecurityVisual() {
     return (
-        <section id="security" className="security-section container-fluid py-5" data-aos="zoom-in-up">
+        <section className="security-section container-fluid py-5" data-aos="zoom-in-up">
             <div className="row align-items-center">
 
                 {/* LEFT SIDE (LOCK VISUAL) */}
@@ -49,4 +49,4 @@ export default function SecurityVisual() {
             </div>
         </section>
     );
-} 
+}

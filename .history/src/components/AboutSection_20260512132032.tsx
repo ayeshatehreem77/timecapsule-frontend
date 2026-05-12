@@ -19,8 +19,7 @@ export default function AboutSection() {
           we provide the secure, digital bridge between who you are today and who you will become.
         </p>
 
-        <Link data-bs-toggle="modal"
-          data-bs-target="#signupModal" className="cta-btn me-3 text-decoration-none" to='/register'>
+        <Link className="cta-btn me-3 text-decoration-none" to='/register'>
           Start Your Legacy
         </Link>
 

@@ -50,8 +50,8 @@ export default function LandingPage() {
               <div className="ms-auto nav-items d-flex flex-column flex-lg-row align-items-center">
                 <a className="links my-2 my-lg-0" href="#features">Features</a>
                 <a className="links my-2 my-lg-0" href="#about">About</a>
-                <a className="links my-2 my-lg-0" href="#security">Security</a>
-                <a className="links my-2 my-lg-0" href="#faq">FAQ</a>
+                <a className="links my-2 my-lg-0" href="security">Security</a>
+                <a className="links my-2 my-lg-0" href="faq">FAQ</a>
               </div>
             </div>
           </div>
@@ -90,7 +90,7 @@ export default function LandingPage() {
         <AboutSection />
 
         {/* 🔥 FEATURES */}
-        <div id="features" className="container mt-5 pt-5 features" data-aos="zoom-in-up">
+        <div className="container mt-5 pt-5 features" data-aos="zoom-in-up">
           <h1 className="security-title mb-3 text-center">Features</h1>
           <p className="hero-sub mb-5 text-center">
             Every capsule is encrypted, isolated, and only revealed at the perfect moment.

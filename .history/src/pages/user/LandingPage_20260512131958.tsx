@@ -50,8 +50,8 @@ export default function LandingPage() {
               <div className="ms-auto nav-items d-flex flex-column flex-lg-row align-items-center">
                 <a className="links my-2 my-lg-0" href="#features">Features</a>
                 <a className="links my-2 my-lg-0" href="#about">About</a>
-                <a className="links my-2 my-lg-0" href="#security">Security</a>
-                <a className="links my-2 my-lg-0" href="#faq">FAQ</a>
+                <a className="links my-2 my-lg-0" href="security">Security</a>
+                <a className="links my-2 my-lg-0" href="faq">FAQ</a>
               </div>
             </div>
           </div>

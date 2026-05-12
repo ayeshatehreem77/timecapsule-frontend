@@ -3,7 +3,7 @@ import "../styles/landing.css";
 
 export default function FAQ() {
   return (
-    <section id="faq" className="faq-section py-5 text-light" data-aos="zoom-in-up">
+    <div id="faq" className="faq-section py-5 text-light" data-aos="zoom-in-up">
       <Container>
         <h2 className="text-center mb-4 fw-bold">FAQ</h2>
 
@@ -31,6 +31,6 @@ export default function FAQ() {
 
         </Accordion>
       </Container>
-    </section>
+    </div>
   );
 }

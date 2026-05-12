@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="about-section d-flex align-items-center justify-content-center text-center" data-aos="zoom-in-up">
+    <section className="about-section d-flex align-items-center justify-content-center text-center" data-aos="zoom-in-up">
 
 
       <div className="about-content container">
@@ -19,8 +19,7 @@ export default function AboutSection() {
           we provide the secure, digital bridge between who you are today and who you will become.
         </p>
 
-        <Link data-bs-toggle="modal"
-          data-bs-target="#signupModal" className="cta-btn me-3 text-decoration-none" to='/register'>
+        <Link className="cta-btn me-3 text-decoration-none" to='/register'>
           Start Your Legacy
         </Link>
 

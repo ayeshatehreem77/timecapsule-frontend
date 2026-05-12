@@ -1,8 +1,9 @@
-
+import { Link } from "react-router-dom";
 import "../../styles/landing.css";
 import AboutSection from "../../components/AboutSection"
 import SecurityVisual from "../../components/SecurityVisual"
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import PricingSection from "../../components/Pricing";
 import HowItWorks from "../../components/HowItWorks";
 import FAQ from "../../components/FAQ";
 import Footer from "../../components/Footer";
@@ -48,10 +49,11 @@ export default function LandingPage() {
             {/* 🔗 Nav Items */}
             <div className="collapse navbar-collapse" id="navbarNav">
               <div className="ms-auto nav-items d-flex flex-column flex-lg-row align-items-center">
-                <a className="links my-2 my-lg-0" href="#features">Features</a>
-                <a className="links my-2 my-lg-0" href="#about">About</a>
-                <a className="links my-2 my-lg-0" href="#security">Security</a>
-                <a className="links my-2 my-lg-0" href="#faq">FAQ</a>
+                <Link className="links my-2 my-lg-0" to="">Features</Link>
+                <Link className="links my-2 my-lg-0" to="">About</Link>
+                <Link className="links my-2 my-lg-0" to="">Security</Link>
+                <Link className="links my-2 my-lg-0" to="">Pricing</Link>
+                <Link className="links my-2 my-lg-0" to="">FAQ</Link>
               </div>
             </div>
           </div>
@@ -90,7 +92,7 @@ export default function LandingPage() {
         <AboutSection />
 
         {/* 🔥 FEATURES */}
-        <div id="features" className="container mt-5 pt-5 features" data-aos="zoom-in-up">
+        <div className="container mt-5 pt-5 features" data-aos="zoom-in-up">
           <h1 className="security-title mb-3 text-center">Features</h1>
           <p className="hero-sub mb-5 text-center">
             Every capsule is encrypted, isolated, and only revealed at the perfect moment.
@@ -149,6 +151,7 @@ export default function LandingPage() {
       </div>
 
       <HowItWorks />
+      <PricingSection />
       <FAQ />
       <Footer />
 

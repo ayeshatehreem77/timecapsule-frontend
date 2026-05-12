@@ -3,11 +3,11 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 export default function SecurityVisual() {
     return (
-        <section id="security" className="security-section container-fluid py-5" data-aos="zoom-in-up">
+        <section className="security-section container-fluid py-5" data-aos="zoom-in-up">
             <div className="row align-items-center">
 
                 {/* LEFT SIDE (LOCK VISUAL) */}
-                <div className="col-md-6 text-center position-relative h-100">
+                <div className="col-md-6 text-center position-relative height-100">
                     <div className="lock-wrapper">
                         <div className="lock-container">
                             <div style={{ width: '500px', height: '500px', position: 'relative' }}>
@@ -49,4 +49,4 @@ export default function SecurityVisual() {
             </div>
         </section>
     );
-} 
+}
