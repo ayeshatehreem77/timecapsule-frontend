@@ -31,7 +31,7 @@ const EventLog = () => {
     }, []);
 
     useEffect(() => {
-        const socket = io(import.meta.env.VITE_API_URL);
+        const socket = io(${import.meta.env.VITE_API_URL});
 
         socket.on("new-log", (log: Log) => {
             setLogs(prev => [log, ...prev]);

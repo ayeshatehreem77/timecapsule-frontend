@@ -14,7 +14,7 @@ export const NotificationProvider = ({ children }: Props) => {
 
     console.log("👤 USER ID:", userId); // 🔥 ADD THIS
 
-    const newSocket = io(import.meta.env.VITE_API_URL, {
+    const newSocket = io(`${import.meta.env.VITE_API_URL}`, {
         query: { userId },
     });
 

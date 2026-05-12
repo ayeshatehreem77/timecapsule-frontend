@@ -11,7 +11,7 @@ export default function SignupModal() {
     password: "",
   });
 
-  const { showAlert } = useAlert();
+  const {showAlert} = useAlert();
 
   const [otp, setOtp] = useState("");
   const [step, setStep] = useState("signup"); // 🔥 FIX
@@ -19,19 +19,13 @@ export default function SignupModal() {
   // 🔐 SIGNUP
   const handleSignup = async () => {
     try {
-      const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/auth/register`,
-        form
-      );
+      await axios.post(`${import.meta.env.VITE_API_URL}/auth/register`, form);
 
-      // ⚠️ only if backend actually returns user + token
-      localStorage.setItem("userId", res.data.user?._id);
-      localStorage.setItem("token", res.data.token);
+      showAlert("OTP sent to your email", 'success');
+      setStep("otp"); // 🔥 switch UI
 
-      showAlert("OTP sent to your email", "success");
-      setStep("otp");
     } catch (err: any) {
-      showAlert(err.response?.data?.message || "Signup failed", "error");
+      showAlert(err.response?.data?.message || "Signup failed", 'error');
     }
   };
 
