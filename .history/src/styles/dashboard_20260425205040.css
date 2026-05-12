@@ -1,0 +1,202 @@
+.dashboard-container {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0b1b2b, #050d18);
+  color: white;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 250px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  /* Spacing thori barha di hai rotation ki wajah se */
+}
+
+.navbar-brand {
+  color: #6fffe9 !important;
+  font-weight: 600 !important;
+}
+
+
+.nav-item {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background: rgba(111, 255, 233, 0.2);
+  color: white;
+}
+
+.seal-btn {
+  background: gold;
+  color: black;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+/* MAIN */
+.main-content {
+  flex: 1;
+}
+
+/* STAT CARDS */
+.stat-card {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+/* CAPSULE CARD */
+.capsule-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.capsule-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(111, 255, 233, 0.4);
+}
+
+.capsule-card span {
+  color: #ffd166;
+  font-weight: bold;
+}
+
+.vault-card {
+  background: rgba(255,255,255,0.06);
+  border-radius: 18px;
+  padding: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.vault-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 196, 0, 0.6);
+}
+
+.vault-icon {
+  font-size: 40px;
+}
+
+.unlock-label {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 10px;
+}
+
+.unlock-time {
+  color: #ffc107;
+  font-weight: bold;
+}
+
+/* History */
+.timeline {
+  position: relative;
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -10px;
+  top: 20px;
+  width: 12px;
+  height: 12px;
+  background: gold;
+  border-radius: 50%;
+  box-shadow: 0 0 10px gold;
+}
+
+.timeline-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 18px;
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
+}
+
+.timeline-card:hover {
+  box-shadow: 0 0 20px rgba(255, 200, 0, 0.6);
+}
+
+.timeline-icon {
+  font-size: 24px;
+}
+
+.status-badge {
+  color: #ffc107;
+  font-weight: bold;
+}
+
+/* Legacy */
+.legacy-container {
+  color: white;
+}
+
+.section-title {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.legacy-table {
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.legacy-header {
+  font-size: 14px;
+  opacity: 0.7;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.legacy-row {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.col {
+  flex: 1;
+}
+
+.unlock-date {
+  color: #ff6ad5;
+}
+
+.manage-btn {
+  background: linear-gradient(45deg, #ffb347, #ffcc33);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+}

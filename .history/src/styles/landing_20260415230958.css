@@ -1,0 +1,89 @@
+/* 🌌 Background */
+.landing-bg {
+  min-height: 100vh;
+  background: transparent;
+  color: white;
+  /* position: relative; */
+  overflow: hidden;
+}
+
+/* ✨ Glowing Orb */
+.glow-orb {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.4), transparent);
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(100px);
+  /* z-index: 0; */
+}
+
+/* 🧠 Hero text */
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ff8a00, #00d4ff, #ff8a00);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s infinite linear;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0%
+  }
+
+  100% {
+    background-position: 200%
+  }
+}
+
+.hero-sub {
+  color: #cbd5e1;
+}
+
+/* 🚀 CTA */
+.cta-btn {
+  background: linear-gradient(90deg, #ff8a00, #00d4ff);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  box-shadow: 0 0 25px #00d4ff;
+  transform: scale(1.05);
+}
+
+/* 🧊 Glass Cards */
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 25px;
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.feature-icon img {
+  width: 50px;
+}
+
+/* 🧾 Footer */
+.footer {
+  margin-top: 100px;
+  padding: 40px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: #94a3b8;
+}

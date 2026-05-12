@@ -1,0 +1,30 @@
+
+
+.admin-dashboard-container {
+  padding: 20px;
+  background: #08090d;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.admin-grid {
+  display: grid
+  grid-template-columns: repeat(4, 1fr); /* 4 columns for modularity */
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+
+/* Specific module sizes */
+.stats-module { grid-column: span 1; }
+.event-log-module { grid-column: span 2; }
+.subject-module { grid-column: span 4; } /* Full width for users */
+.system-health-module { grid-column: span 2; }
+
+/* Global Glass Effect for Modules */
+.module-glass {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 15px;
+  backdrop-filter: blur(10px);
+}

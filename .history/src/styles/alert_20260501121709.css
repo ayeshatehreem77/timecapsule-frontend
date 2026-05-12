@@ -1,0 +1,22 @@
+.cyber-alert-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000; /* Sab se zyada priority */
+  min-width: 300px;
+  padding: 15px;
+  border-radius: 8px;
+  background: rgba(10, 11, 16, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(111, 255, 233, 0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  animation: slideIn 0.3s ease-out;
+}
+
+.alert-success { border-left: 5px solid #00ffcc; }
+.alert-error { border-left: 5px solid #ff4444; }
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}

@@ -1,0 +1,111 @@
+import { useEffect, useState } from "react";
+import api from "../utils/api";
+
+const CapsulesManager = () => {
+  const [capsules, setCapsules] = useState([]);
+  const [page, setPage] = useState(1);
+  const [total, setTotal] = useState(0);
+  const [search, setSearch] = useState("");
+  const [status, setStatus] = useState("");
+
+  const fetchCapsules = async () => {
+    try {
+      const res = await api.get(
+        `/admin/capsules?page=${page}&limit=10&search=${search}&status=${status}`
+      );
+
+      setCapsules(res.data.capsules);
+      setTotal(res.data.total);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchCapsules();
+  }, [page, search, status]);
+
+  const deleteCapsule = async (id) => {
+    await api.delete(`/admin/capsules/${id}`);
+    fetchCapsules();
+  };
+
+  const updateStatus = async (id, newStatus) => {
+    await api.patch(`/admin/capsules/${id}/status`, {
+      status: newStatus,
+    });
+    fetchCapsules();
+  };
+
+  return (
+    <div className="module-glass">
+      <h3 className="panel-title">CAPSULES_MANAGER</h3>
+
+      {/* Filters */}
+      <div className="filters">
+        <input
+          placeholder="Search capsule..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+
+        <select onChange={(e) => setStatus(e.target.value)}>
+          <option value="">All</option>
+          <option value="locked">Locked</option>
+          <option value="unlocked">Unlocked</option>
+          <option value="scheduled">Scheduled</option>
+        </select>
+      </div>
+
+      {/* Table */}
+      <table className="admin-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Created</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {capsules.map((c) => (
+            <tr key={c._id}>
+              <td>{c.title}</td>
+              <td>{c.status}</td>
+              <td>{new Date(c.createdAt).toLocaleDateString()}</td>
+
+              <td>
+                <button onClick={() => updateStatus(c._id, "unlocked")}>
+                  Unlock
+                </button>
+
+                <button onClick={() => deleteCapsule(c._id)}>
+                  Delete
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      {/* Pagination */}
+      <div className="pagination">
+        <button disabled={page === 1} onClick={() => setPage(page - 1)}>
+          Prev
+        </button>
+
+        <span>Page {page}</span>
+
+        <button
+          disabled={page * 10 >= total}
+          onClick={() => setPage(page + 1)}
+        >
+          Next
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default CapsulesManager;

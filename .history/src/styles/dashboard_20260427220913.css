@@ -1,0 +1,417 @@
+.dashboard-container {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0b1b2b, #050d18);
+  color: white;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 250px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  /* Spacing thori barha di hai rotation ki wajah se */
+}
+
+.navbar-brand {
+  color: #6fffe9 !important;
+  font-weight: 600 !important;
+}
+
+
+.nav-item {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background: rgba(111, 255, 233, 0.2);
+  color: white;
+}
+
+.seal-btn {
+  background: gold;
+  color: black;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+/* MAIN */
+.main-content {
+  flex: 1;
+}
+
+/* STAT CARDS */
+.stat-card {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+/* CAPSULE CARD */
+.capsule-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.capsule-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(111, 255, 233, 0.4);
+}
+
+.capsule-card span {
+  color: #ffd166;
+  font-weight: bold;
+}
+
+/* --- Active Vaults Grid Styles --- */
+
+.active-vaults-container {
+    padding: 10px;
+}
+
+.grid-label {
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.vaults-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* Glass Card Architecture */
+.vault-card-glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.vault-card-glass:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(0, 255, 255, 0.3);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Vessel Icon Glow */
+.vault-vessel-container {
+    width: 60px;
+    height: 80px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.vessel-glow-img {
+    height: 100%;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.6));
+}
+
+.vault-info {
+    text-align: center;
+    width: 100%;
+}
+
+.vault-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 15px;
+    height: 40px; /* Ensures alignment if titles differ in length */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Unlock Status Section */
+.unlock-status {
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.unlock-label {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 5px;
+}
+
+.unlock-time-glow {
+    display: block;
+    font-family: 'Courier New', Courier, monospace; /* Digital look */
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffcc33; /* Amber/Gold */
+    text-shadow: 0 0 10px rgba(255, 204, 51, 0.5);
+}
+
+/* Hover state specific for the time */
+.vault-card-glass:hover .unlock-time-glow {
+    color: #00ffff; /* Switch to Cyan on hover? Or just brighten the Amber */
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+}
+
+/* The Glowing Amber Node */
+.timeline-node {
+    position: absolute;
+    left: -35px;
+    top: 22px;
+    width: 12px;
+    height: 12px;
+    background: #ffb347;
+    border-radius: 50%;
+    border: 2px solid #1a1a1a;
+    box-shadow: 0 0 10px #ffb347;
+    z-index: 2;
+}
+
+/* The Glass Card (matching your mock image) */
+.history-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 179, 71, 0.1); /* Subtle amber border */
+    border-radius: 12px;
+    padding: 15px 25px;
+    transition: all 0.3s ease;
+}
+
+.history-card:hover {
+    background: rgba(255, 179, 71, 0.05);
+    border-color: rgba(255, 179, 71, 0.4);
+    transform: translateX(5px);
+}
+
+.history-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.history-main-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.history-icon-wrapper {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mini-capsule-img {
+    width: 100%;
+    filter: sepia(1) saturate(2) hue-rotate(10deg); /* Makes it look amber/gold */
+}
+
+.history-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: #f0f0f0;
+}
+
+.history-date {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Delivered Status (Refined Amber Glow) */
+.delivered-tag {
+    color: #ffb347;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.check-icon {
+    font-style: normal;
+    font-size: 16px;
+    text-shadow: 0 0 5px #ffb347;
+}
+
+/* Animation for the list */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Legacy Component Styles --- */
+
+.legacy-container {
+    color: white;
+    padding: 10px;
+}
+
+.component-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* The Main Glass Table */
+.legacy-glass-table {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Header Styling */
+.legacy-header-row {
+    display: flex;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-col {
+    flex: 1;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Row Styling */
+.legacy-item-row {
+    display: flex;
+    align-items: center;
+    padding: 18px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.3s ease;
+}
+
+.legacy-item-row:hover {
+    background: rgba(0, 255, 255, 0.02);
+}
+
+.legacy-col {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+/* Capsule Name & Icon */
+.capsule-mini-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.capsule-mini-icon img {
+    width: 100%;
+    filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.5));
+}
+
+.capsule-name {
+    font-weight: 500;
+    color: #e0e0e0;
+}
+
+/* Recipient Avatar */
+.user-avatar-small {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(45deg, #2c2c2c, #444);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #00ffff;
+}
+
+/* The Important Unlock Date (Purple Glow) */
+.glow-text-purple {
+    color: #bf80ff;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(191, 128, 255, 0.6);
+}
+
+/* Manage Access Button (Amber/Gold) */
+.btn-manage-access {
+    background: transparent;
+    color: #ffcc33;
+    border: 1px solid #ffcc33;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn-manage-access:hover {
+    background: rgba(255, 204, 51, 0.1);
+    box-shadow: 0 0 15px rgba(255, 204, 51, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Utility */
+.text-right {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.empty-state {
+    padding: 40px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+}

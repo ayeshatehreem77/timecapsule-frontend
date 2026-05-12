@@ -1,0 +1,236 @@
+/* 🌌 Background */
+.landing-bg {
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% 20%, #1e3a5f, #0b1220 60%);
+  color: white;
+  /* position: relative; */
+  overflow: hidden;
+}
+
+/* ✨ Glowing Orb */
+.glow-orb {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.4), transparent);
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(100px);
+  /* z-index: 0; */
+}
+
+/* 🧠 Hero text */
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ff8a00, #00d4ff, #ff8a00);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s infinite linear;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0%
+  }
+
+  100% {
+    background-position: 200%
+  }
+}
+
+.hero-sub {
+  color: #cbd5e1;
+}
+
+/* 🚀 CTA */
+.cta-btn {
+  background: linear-gradient(90deg, #ff8a00, #00d4ff);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  box-shadow: 0 0 25px #00d4ff;
+  transform: scale(1.05);
+}
+
+/* 🧊 Glass Cards */
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 25px;
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.feature-icon img {
+  width: 50px;
+}
+
+/* 🧾 Footer */
+.footer {
+  margin-top: 100px;
+  padding: 40px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: #94a3b8;
+}
+
+/* 🌌 Cosmic Core Container */
+.cosmic-core {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+/* 🔴 Center dot */
+.core-dot {
+  width: 6px;
+  height: 6px;
+  background: #ff4d4d;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff4d4d;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* 🌫 Glow aura */
+.core-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.3), transparent);
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+/* ✨ Pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.4);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 🌌 Container */
+.security-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: radial-gradient(circle at center, rgba(255, 0, 0, 0.05), transparent);
+  overflow: hidden;
+}
+
+/* 🔴 Node base */
+.node {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #ff4d4d;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #ff4d4d, 0 0 20px #ff4d4d;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* 📍 Positions */
+.node-left {
+  top: 40%;
+  left: 10%;
+}
+
+.node-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.node-right {
+  top: 30%;
+  right: 15%;
+}
+
+/* ✨ Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.6);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.line {
+  position: absolute;
+  height: 1px;
+  background: rgba(255, 77, 77, 0.3);
+}
+
+.node {
+  animation: float 4s infinite ease-in-out;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.line {
+  position: absolute;
+  height: 1px;
+  background: rgba(255, 77, 77, 0.3);
+}
+
+/* Left → Center */
+.line-1 {
+  top: 45%;
+  left: 10%;
+  width: 40%;
+}
+
+/* Center → Right */
+.line-2 {
+  top: 48%;
+  left: 50%;
+  width: 35%;
+}
