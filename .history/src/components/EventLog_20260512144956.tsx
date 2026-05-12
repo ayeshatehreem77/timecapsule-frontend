@@ -31,16 +31,15 @@ const EventLog = () => {
     }, []);
 
     useEffect(() => {
-        const socket = io(import.meta.env.VITE_API_URL, {
-            transports: ["websocket", "polling"],
-        });
+        const socket = io(import.meta.env.VITE_API_URL);
 
-        socket.on("new-log", (log) => {
+        socket.on("new-log", (log: Log) => {
             setLogs(prev => [log, ...prev]);
         });
 
         return () => {
-            socket.disconnect();
+            socket.off("new-log"); 
+            socket.disconnect(); // ✅ CLEANUP FUNCTION
         };
     }, []);
 
