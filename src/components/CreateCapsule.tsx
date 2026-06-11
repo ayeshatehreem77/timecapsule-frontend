@@ -42,10 +42,7 @@ export default function CreateCapsule() {
       const formData = new FormData();
       formData.append("title", form.title);
       formData.append("recipientEmail", form.recipientEmail);
-      formData.append(
-  "unlockDate",
-  new Date(form.unlockDate).toISOString()
-);
+      formData.append("unlockDate", form.unlockDate);
       formData.append("message", form.message);
       formData.append("passcode", form.passcode);
       formData.append("isSealed", "true");
