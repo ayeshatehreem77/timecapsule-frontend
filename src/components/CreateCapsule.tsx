@@ -35,38 +35,55 @@ export default function CreateCapsule() {
   }, [file]);
 
   const handleCreate = async () => {
-    try {
-      const token = localStorage.getItem("token");
+  try {
+    const token = localStorage.getItem("token");
 
-      // Use FormData for multipart/form-data support
-      const formData = new FormData();
-      formData.append("title", form.title);
-      formData.append("recipientEmail", form.recipientEmail);
-      formData.append(
-  "unlockDate",
-  new Date(form.unlockDate).toISOString()
-);
-      formData.append("message", form.message);
-      formData.append("passcode", form.passcode);
-      formData.append("isSealed", "true");
+    const formData = new FormData();
+    formData.append("title", form.title);
+    formData.append("recipientEmail", form.recipientEmail);
+    formData.append("unlockDate", form.unlockDate);
+    formData.append("message", form.message);
+    formData.append("passcode", form.passcode);
+    formData.append("isSealed", "true");
 
-      // Append the actual file from your state
-      if (file) {
-        formData.append("file", file);
-      }
-
-      await api.post("/capsules", formData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "multipart/form-data"
-        },
-      });
-
-      showAlert("Memory Sealed Successfully!", 'success');
-    } catch (err: any) {
-      showAlert(err.response?.data?.message || "Encryption Failed", 'error');
+    if (file) {
+      formData.append("file", file);
     }
-  };
+
+    const res = await api.post("/capsules", formData, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "multipart/form-data",
+      },
+    });
+
+    console.log("CAPSULE CREATED:", res.data);
+
+    showAlert("Memory Sealed Successfully!", "success");
+
+    // RESET FORM
+    setForm({
+      title: "",
+      recipientEmail: "",
+      unlockDate: "",
+      message: "",
+      passcode: "",
+    });
+
+    setFile(null);
+    setPreview(null);
+
+  } catch (err: any) {
+    console.error(err);
+
+    showAlert(
+      err.response?.data?.message ||
+      err.message ||
+      "Encryption Failed",
+      "error"
+    );
+  }
+};
 
   return (
     <div className="create-capsule-container fade-in">
@@ -118,6 +135,7 @@ export default function CreateCapsule() {
             <input
               className="custom-input"
               placeholder="e.g., Letter to My 2030 Self"
+              value={form.title}
               onChange={(e) => setForm({ ...form, title: e.target.value })}
             />
           </div>
@@ -127,6 +145,7 @@ export default function CreateCapsule() {
             <input
               className="custom-input"
               placeholder="Enter email address"
+              value={form.recipientEmail}
               onChange={(e) => setForm({ ...form, recipientEmail: e.target.value })}
             />
           </div>
@@ -136,6 +155,7 @@ export default function CreateCapsule() {
             <input
               type="datetime-local"
               className="custom-input"
+              value={form.unlockDate}
               onChange={(e) => setForm({ ...form, unlockDate: e.target.value })}
             />
           </div>
@@ -144,6 +164,7 @@ export default function CreateCapsule() {
             <label>The Message</label>
             <textarea
               className="custom-textarea"
+              value={form.message}
               placeholder="Write the message that will travel through time..."
               onChange={(e) => setForm({ ...form, message: e.target.value })}
             />
